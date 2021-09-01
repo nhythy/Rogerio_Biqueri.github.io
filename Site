@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Site Pessoal</title>
+
+    <style>
+        body {
+            background: #BDB76B;
+            margin-right: 55px;
+
+            font: 62.5%/1.2 Verdana, Helvetica, Arial, sans-serif;
+        }
+
+        #lateral {
+            padding: 2 2 2;
+            transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            font-size: 1.2em;
+            background: rgb(44, 62, 80);
+            background-image: linear-gradient(135deg, rgb(3, 8, 12), rgb(16, 57, 79));
+            background-image: linear-gradient(135deg, rgb(3, 8, 12), rgb(16, 57, 79));
+            background-image: linear-gradient(135deg, rgb(3, 8, 12), rgb(16, 57, 79));
+            background-image: linear-gradient(135deg, rgb(3, 8, 12), rgb(16, 57, 79));
+            background-image: linear-gradient(135deg, rgb(3, 8, 12), rgb(16, 57, 79));
+            height: 100%;
+            overflow: hidden;
+            width: 370px;
+            position: fixed;
+            top: 0;
+            right: -10px;
+
+        }
+
+        #lateral:before {
+            z-index: 1000;
+
+            font-size: 4em;
+            color: white;
+            position: fixed;
+            right: 10px;
+            top: 100px;
+        }
+
+
+        #lateral:focus:before {
+            right: -500px
+        }
+
+
+
+       
+
+        #lateral .box {
+            list-style-type: none;
+            margin-bottom: 1em;
+            ;
+            padding-bottom: 1em;
+        }
+
+        #lateral h3 {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.6em;
+            font-style: normal;
+            padding-bottom: 0.2em;
+            margin: 2em 0 2em 0.81em;
+            color: rgb(255, 255, 255);
+            border-bottom: 4px solid rgb(155, 155, 155);
+        }
+
+        #menu {
+            font-style: italic;
+            position: relative;
+            font-size: 1.0em;
+            margin: 1em 0 1em -1em;
+            padding: 0;
+        }
+
+        #menu li {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        #menu li a,
+        #menu li a:link {
+            font-size: 1.2em;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+
+
+            transition: all 1.2s ease;
+            transition: all 1.2s ease;
+            transition: all 1.2s ease;
+            transition: all 1.2s ease;
+        }
+
+        #menu li a:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        @media (max-width: -500px) {
+            body {
+                margin-right: -100;
+                background-size: 100% 28em !important;
+            }
+
+            #lateral {
+                padding: 0;
+                transition: all 0.5s ease;
+                transition: all 0.5s ease;
+                transition: all 0.5s ease;
+                transition: all 0.5s ease;
+                font-size: 1.2em;
+                height: 100%;
+                overflow: auto;
+                width: 100%;
+                position: static;
+                top: 0;
+                right: -100;
+            }
+
+            #lateral:before {
+                z-index: 1000;
+                width: 0;
+                text-align: center;
+                content: "";
+                font-size: 0;
+                color: white;
+                position: static;
+                top: 0;
+                right: -100;
+                display: inline-block;
+            }
+
+            #lateral:hover,
+            #lateral:focus {
+                overflow: scroll;
+                transform: none;
+                transform: none;
+                transform: none;
+                transform: none;
+            }
+
+            #menu li a {
+                border-bottom: 1px solid #ccc;
+            }
+
+            #menu li:first-child a {
+                border-top: 1px solid #ccc;
+            }
+        }
+
+        .containe {
+            
+            display: grid;
+            grid-template-areas: ;
+            grid-template-columns: 1fr 1fr 1fr;
+            
+            grid-template-rows: 1fr 1fr 1fr;
+
+            grid-gap: 14px 14px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "espaço1 espaço2 espaço3"
+                "espaço4 espaço5 espaço6"
+                ". . .";
+
+            width: 44em;
+            height: 38em;
+        }
+
+        .espaco1 {
+            grid-area: espaço1;
+        }
+
+        .espao2 {
+            grid-area: espaço2;
+        }
+
+        .espaço3 {
+            grid-area: espaço3;
+        }
+
+        .espaço4 {
+            grid-area: espaço4;
+        }
+
+        .espaço5 {
+            grid-area: espaço5;
+        }
+
+        .espaço6 {
+            grid-area: espaço6;
+        }
+
+        .flip-containe {
+            width: 250px;
+            height: 250px;
+            perspective: 2000px;
+
+
+        }
+
+        .flipper {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+
+
+        }
+
+        .flip-containe:hover .flipper {
+            transform: rotateY(180deg);
+
+
+
+        }
+
+        .flipper {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+
+        }
+
+        .flipper {
+
+            position: relative;
+
+
+
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .back {
+
+            transform: rotatey(-180deg);
+
+
+
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+
+        }
+
+
+
+
+
+
+        body {
+            background-color: rgb(228, 241, 245);
+        }
+
+        .galeria {
+            width: 90%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .imagem-responsiva {
+            width: 100%;
+            height: auto;
+        }
+
+        .box {
+            color: blue;
+            width: 150px;
+            height: 150px;
+            border: 2px solid white;
+            background-color: black;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.35);
+            transition: transform 0.6s ease-in-out;
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        .box:hover {
+            border: 10px solid black;
+            transform: scale(1.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+        }
+
+
+
+
+
+
+
+
+        @import "compass/css3";
+
+        @import url(https://fonts.googleapis.com/css?family=Finger+Paint);
+
+        html,
+        body {
+            height: 100%;
+        }
+
+
+
+
+
+
+        .footer-widget p {
+            margin-bottom: 27px;
+        }
+
+        p {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 28px;
+        }
+
+        .animate-border {
+            position: relative;
+            display: block;
+            width: 115px;
+            height: 3px;
+            background: #007bff;
+        }
+
+        .animate-border:after {
+            position: absolute;
+            content: "";
+            width: 35px;
+            height: 3px;
+            left: 0;
+            bottom: 0;
+            border-left: 10px solid #fff;
+            border-right: 10px solid #fff;
+            animation: linha 2s linear infinite;
+            animation: linha 2s linear infinite;
+        }
+
+        @keyframes linha {
+            0% {
+                transform: translateX(0px);
+                transform: translateX(0px);
+            }
+
+            100% {
+                transform: translateX(113px);
+                transform: translateX(113px);
+            }
+        }
+
+        @keyframes linha {
+            0% {
+                transform: translateX(0px);
+                transform: translateX(0px);
+            }
+
+            100% {
+                transform: translateX(113px);
+                transform: translateX(113px);
+            }
+        }
+
+        .animate-border.border-white:after {
+            border-color: #fff;
+        }
+
+        .animate-border.border-yellow:after {
+            border-color: #F5B02E;
+        }
+
+        .animate-border.border-orange:after {
+            border-right-color: #007bff;
+            border-left-color: #007bff;
+        }
+
+        .animate-border.border-ash:after {
+            border-right-color: #EEF0EF;
+            border-left-color: #EEF0EF;
+        }
+
+        .animate-border.border-offwhite:after {
+            border-right-color: #F7F9F8;
+            border-left-color: #F7F9F8;
+        }
+
+
+       
+
+        .efeito-footer {
+            padding: 75px 0 0;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .efeito-footer .contact-us {
+            margin-top: 0;
+            margin-bottom: 30px;
+            padding-left: 80px;
+        }
+
+        .efeito-footer .contact-us .contact-info {
+            margin-left: 50px;
+        }
+
+        .efeito-footer .contact-us.contact-us-last {
+            margin-left: -80px;
+        }
+
+        .efeito-footer .contact-icon i {
+            font-size: 24px;
+            top: -15px;
+            position: relative;
+            color: #007bff;
+        }
+
+
+
+        .efeito-footer-box-info .footer-social-link h3 {
+            color: blue;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .efeito-footer-box-info .footer-social-link ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .efeito-footer-box-info .footer-social-link li {
+            display: inline-block;
+        }
+
+        .efeito-footer-box-info .footer-social-link a i {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            background: #000;
+            margin-right: 5px;
+            color: blue;
+        }
+
+        .efeito-footer-box-info .footer-social-link a i.fa-facebook {
+            background-color: #3B5998;
+        }
+
+        .efeito-footer-box-info .footer-social-link a i.fa-twitter {
+            background-color: #55ACEE;
+        }
+
+        .efeito-footer-box-info .footer-social-link a i.fa-google-plus {
+            background-color: #DD4B39;
+        }
+
+        .efeito-footer-box-info .footer-social-link a i.fa-linkedin {
+            background-color: #0976B4;
+        }
+
+        .efeito-footer-box-info .footer-social-link a i.fa-instagram {
+            background-color: #B7242A;
+        }
+
+        .footer-awarad {
+            margin-top: 10px;
+
+            display: flex;
+
+
+            display: flex;
+
+            flex: 0 0 100%;
+
+            align-items: center;
+        }
+
+        .footer-awarad p {
+            color: blue;
+            font-size: 24px;
+            font-weight: 300;
+            margin-left: 20px;
+            padding-top: 15px;
+        }
+
+        .footer-info-text {
+            margin: 26px 0 32px;
+        }
+
+        .footer-left-widget {
+            padding-left: 80px;
+        }
+
+        .footer-widget .section-heading {
+            margin-bottom: 35px;
+        }
+
+        .footer-widget h3 {
+            font-size: 24px;
+            color: blue;
+            position: relative;
+            margin-bottom: 15px;
+
+        }
+
+        .footer-widget ul {
+            width: 50%;
+            float: left;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-widget li {
+            margin-bottom: 18px;
+        }
+
+        .footer-widget p {
+            margin-bottom: 27px;
+        }
+
+        .footer-widget a {
+            color: #878787;
+            transition: all 0.3s;
+            transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .footer-widget a:hover {
+            color: #007bff;
+        }
+
+        .footer-widget:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .dk-footer-form {
+            position: ;
+        }
+
+
+
+
+
+
+
+        .efeito-footer-form button[type=submit] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 12px 24px 12px 17px;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            border: 1px solid #007bff;
+            background: #007bff;
+            color:blue;
+        }
+
+        .efeito-footer-form button:hover {
+
+            cursor: pointer;
+        }
+
+        .contato-us {
+            position: relative;
+            z-index: 2;
+            margin-top: 65px;
+
+            display: flex;
+
+            align-items: center;
+        }
+
+        .contato-icon {
+            position: absolute;
+            transform: scale(1.5);
+        }
+
+        .contato-icon i {
+            font-size: 36px;
+            top: -5px;
+            position: relative;
+            color: #007bff;
+        }
+
+        .contato-info {
+            margin-left: 75px;
+            color: blue;
+        }
+
+        .contato-info h3 {
+            font-size: 20px;
+            color: blue;
+            margin-bottom: 0;
+        }
+
+        .copyright {
+            font-size: 20px;
+            padding: 28px 0;
+            margin-top: 750pxpx;
+            background-color: #202020;
+
+
+        }
+
+        .copyright span,
+        .copyright a {
+            color: #878787;
+            transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            transition: all 0.3s linear;
+        }
+
+        .copyright a:hover {
+            color: #007bff;
+        }
+
+        .copyright-menu ul {
+            text-align: center;
+            margin: 0;
+        }
+
+        .copyright-menu li {
+            display: inline-flex;
+            padding-left: 20px;
+        }
+
+        .back-to-top {
+            position: relative;
+            z-index: 2;
+        }
+
+        .back-to-top .btn-dark {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            padding: 0;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2e2e2e;
+            border-color: #2e2e2e;
+            display: none;
+            z-index: 999;
+            transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            transition: all 0.3s linear;
+        }
+
+        .copyright .back-to-top .btn-dark:hover {
+            cursor: pointer;
+            background: #FA6742;
+            border-color: #FA6742;
+        }
+
+       
+
+
+
+
+
+        @keyframes fadeWhite {
+            100% {
+                color: foreground;
+            }
+        }
+
+        @keyframes glitch {
+            steps: 750;
+
+
+        }
+
+        a:hover {
+            font-size: 1.2em;
+            color: blue;
+            text-decoration: none;
+            text-transform: uppercase darkgreen;
+            transition-timing-function: ease-in-out;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+</head>
+<div id="lateral">
+    <div id="menu">
+
+        <h3 class="link-titulo">Links</h3>
+        <ul class="box">
+            <li><a href="https://www.facebook.com/sonecasutfpr/">Sonecas da UTFPR</a></li>
+            <li><a href="https://www.twitch.tv/nerdoidao">Canal da Twitch</a> </li>
+            <li><a href="https://www.facebook.com/NaoSalvo/">Não Salvo</a></li>
+            <li><a href="https://vidadeprogramador.com.br/">Vida de Programador</a></li>
+        </ul>
+
+        <h3 class="link-titulo">Fontes</h3>
+        <ul class="box">
+            <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+            <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">Developer</a></li>
+
+        </ul>
+
+
+
+
+
+    </div>
+</div id="link">
+<div class="containe">
+    <div class="row">
+        <div class="col-sm">
+            <div class="flip-containe">
+                <div class="flipper">
+                    <div class="front">
+                        <iframe width="250" height="250" src="https://www.youtube.com/embed/videoseries?list=PLGnWLXjIDnpAb29Lrdki5BPjTpMon8zla" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="back">
+                        <iframe width="250" height="250" src="https://www.youtube.com/embed/videoseries?list=PLGnWLXjIDnpAb29Lrdki5BPjTpMon8zla" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="flip-containe">
+                <div class="flipper">
+                    <div class="front">
+                        <iframe width="250" height="250" src="https://www.youtube.com/embed/kcRGLi5D3Tg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="back">
+                       <iframe width="250" height="250" src="https://www.youtube.com/embed/kcRGLi5D3Tg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="flip-containe">
+                <div class="flipper">
+                    <div class="front">
+                        <iframe width="250" height="250" src="https://www.youtube.com/embed/KCA8pOU8TIM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="back">
+                        <iframe width="250" height="250" src="https://www.youtube.com/embed/ckatJTfH4no" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="flip-containe">
+                <div class="flipper">
+                    <div class="front">
+                       <iframe width="250" height="250" src="https://www.youtube.com/embed/8a5qUcu6OdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="back">
+                       <iframe width="250" height="250" src="https://www.youtube.com/embed/8a5qUcu6OdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="flip-containe">
+                <div class="flipper">
+                    <div class="front">
+                        <iframe width="250" height="250" src="https://www.youtube.com/embed/4lHLnZsU1Cg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="back">
+                        <iframe width="250" height="250" src="https://www.youtube.com/embed/4lHLnZsU1Cg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="flip-containe">
+                <div class="flipper">
+                    <div class="front">
+                        <iframe width="250" height="250" src="https://www.youtube.com/embed/videoseries?list=PLYjrJH3e_wDNDpgCvg0rv-mRxIuT_vomn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>1</iframe>
+                    </div>
+                    <div class="back">
+                         <iframe width="250" height="250" src="https://www.youtube.com/embed/videoseries?list=PLYjrJH3e_wDNDpgCvg0rv-mRxIuT_vomn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>1</iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    >
+
+    <footer>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <footer id="efeito-footer" class="efeito-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-4">
+                        <div class="efeito-footer-box-info">
+
+
+
+                            <p class="footer-info-text">
+                                Este site é basicamente uma reunião das coisas que gosto alguns projetos como meus Blogs de Audio livros e Podcasts   sites canais do Youtube e paginas do Facebook.
+                            </p>
+                            <div class="footer-social-link">
+                                <h3>Segue lá</h3>
+                                <ul>
+
+                                    <li>
+                                        <a href="https://www.facebook.com/rogerioandrewsbiqueri.biqueri">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.twitch.tv/nerdoidao">
+                                            <i class="fa fa-twitch" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/biqueri/">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/rogerio_biqueri/">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="footer-awarad">
+                            <img src="images/icon/best.png" alt="">
+                            <p>Feito em 2021</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-8">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="contato-us">
+                                    <div class="contacto-icon">
+                                        <i class="fa fa-map-o" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="contato-info">
+                                        <h3>Toledo PR</h3>
+                                        <p>Minha Casa</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="contato-us contact-us-last">
+                                    <div class="contact-icon">
+                                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="contato-info">
+                                        <h3>??????????????</h3>
+                                        <p></p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-lg-6">
+                                <div class="footer-widget footer-left-widget">
+                                    <div class="section-heading">
+                                        <h3>Links de inspirações  e Projetos</h3>
+                                        <span class="animate-border border-black"></span>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="#"></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://nhythylivros.blogspot.com/">Projeto Audio Livros</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.utfpr.edu.br/">UTFPR</a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <a href="#"></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://biqueriarquivos.blogspot.com/">Blog de Podcast</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://tormentarpg.com.br/">RPG</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12 col-lg-6">
+                                <div class="footer-widget">
+                                    <div class="section-heading">
+                                        <h3>Obrigado</h3>
+                                        <span class="animate-border border-black"></span>
+                                    </div>
+                                    <p>
+
+                                        Trabalho de Sitios Web1
+                                    </p>
+                                    <form action="#">
+                                        <div class="form-row">
+                                            <div class="col dk-footer-form">
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span></span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="copyright-menu">
+                                <ul>
+                                    <li>
+                                        <a href="http://maverick.td.utfpr.edu.br/jardimweb/plantas/227/">Jardim</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://pudim.com.br/">Pudim</a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </footer></html>
